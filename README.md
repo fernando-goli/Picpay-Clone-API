@@ -1,4 +1,4 @@
-# Picpay-clone
+# Picpay Clone API
 
 API que simula as funcionalidades do PicPay da mentoria de Spring Boot e Java da Digital Inovation One (https://digitalinnovation.one/).
 
