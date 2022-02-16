@@ -2,12 +2,14 @@ package com.fgomes.picpayclone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-public class PicpaycloneApplication {
+@EnableCaching
+public class PicpayCloneApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PicpaycloneApplication.class, args);
+		SpringApplication.run(PicpayCloneApplication.class, args);
 	}
 
 }

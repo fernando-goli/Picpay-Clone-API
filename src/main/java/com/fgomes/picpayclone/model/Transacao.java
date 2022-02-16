@@ -1,7 +1,19 @@
-package com.fgomes.picpayclone.modelo;
+package com.fgomes.picpayclone.model;
 
-import lombok.*;
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -19,11 +31,11 @@ public class Transacao extends EntidadeBase implements Serializable {
     @Column(name = "TR_CODIGO", nullable = false)
     private String codigo;
 
-    @ManyToOne(cascade = { CascadeType.MERGE })
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "TR_USUARIO_ORIGEM", nullable = false)
     private Usuario origem;
 
-    @ManyToOne(cascade = { CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinColumn(name = "TR_USUARIO_DESTINO", nullable = false)
     private Usuario destino;
 

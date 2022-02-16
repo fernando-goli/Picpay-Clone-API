@@ -1,14 +1,15 @@
 package com.fgomes.picpayclone.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fgomes.picpayclone.enums.BandeiraCartao;
-import lombok.Data;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fgomes.picpayclone.enums.BandeiraCartao;
+import com.sun.istack.NotNull;
+import lombok.Data;
 
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(Include.NON_NULL)
 public class CartaoCreditoDTO {
 
     @NotBlank

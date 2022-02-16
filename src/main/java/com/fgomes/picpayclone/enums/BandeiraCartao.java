@@ -1,6 +1,7 @@
 package com.fgomes.picpayclone.enums;
 
 public enum BandeiraCartao {
+
     VISA("Visa"), MASTERCARD("Master Card"), ELO("Elo");
 
     private String descricao;
@@ -9,7 +10,8 @@ public enum BandeiraCartao {
         this.descricao = descricao;
     }
 
-    public String getDescricao(){
+    public String getDescricao() {
         return descricao;
     }
+
 }

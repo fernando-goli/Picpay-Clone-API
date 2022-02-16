@@ -1,4 +1,4 @@
-package com.fgomes.picpayclone.modelo;
+package com.fgomes.picpayclone.model;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.GeneratedValue;

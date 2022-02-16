@@ -1,9 +1,29 @@
-package com.fgomes.picpayclone.modelo;
+package com.fgomes.picpayclone.model;
 
-import lombok.*;
-import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fgomes.picpayclone.enums.TipoPermissao;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
@@ -12,7 +32,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "USUARIOS")
-public class Usuario extends EntidadeBase {
+public class Usuario extends EntidadeBase implements UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -46,7 +66,7 @@ public class Usuario extends EntidadeBase {
     @Column(name = "USU_ATIVO", nullable = false)
     private Boolean ativo;
 
-    /*@Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     @Column(name = "USU_PERMISSAO", nullable = false)
     private TipoPermissao permissao;
 
@@ -84,6 +104,6 @@ public class Usuario extends EntidadeBase {
     @Override
     public boolean isEnabled() {
         return this.ativo;
-    }*/
+    }
 
 }
